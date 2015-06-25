@@ -1,0 +1,45 @@
+<%= form_for(@publication) do |f| %>
+  <% if @publication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+      <% @publication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :title, "Marca/Empresa" %><br>
+      <%= f.text_field :title, :class => 'form-control', :placeholder => "Marca/Empresa" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :photo, "Imagen" %><br>
+      <%= f.text_field :photo, :class => 'form-control', :placeholder => "Url imagen" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :description, "Descripción" %><br>
+      <%= f.text_area :description, :class => 'form-control', :rows => "10", :cols => "30", :placeholder => "Agrega una breve descripción..." %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :address, "Dirección" %><br>
+      <%= f.text_field :address, :class => 'form-control', :placeholder => "Dirección" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>

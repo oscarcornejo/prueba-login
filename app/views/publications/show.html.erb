@@ -1,0 +1,34 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @publication.title %>
+  </p>
+
+  <p>
+    <strong>Photo:</strong>
+    <%= image_tag(@publication.photo, :class => 'img-responsive', :style => 'width: 450px') %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @publication.description %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @publication.address %>
+  </p>
+
+  <p>
+    <strong>Hora:</strong>
+    <%= @publication.created_at %>
+  </p>
+
+</div>
+
+<div class="container">
+  <%= link_to 'Edit', edit_publication_path(@publication) %> |
+  <%= link_to 'Back', publications_path %>
+</div>
